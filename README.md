@@ -68,7 +68,7 @@ class ActorNameLength(BaseQuery):
     def __init__(self, config: Config) -> None:
         super().__init__(config)
 
-    def _plot(self, data: pd.DataFrame) -> None:
+    def plot(self, data: pd.DataFrame) -> None:
         # Customize your plot.
         data.plot(kind="hist", title="Actor Name Length", bins=20)
         plt.savefig("actor_name_length.png")
