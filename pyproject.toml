@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "CSI-300 Project Two"
+description = "Poetry project for CSI-300 Project Two."
+version = "0.1.0"
+authors = ["EOF-D <END-OFD@pm.me>"]
+packages = [{ include = "analyst"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyright = "^1.1.393"
+mysql-connector-python = "^9.2.0"
+numpy = "^2.2.3"
+pandas = "^2.2.3"
+matplotlib = "^3.10.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+isort = "^5.13.2"
+
+[tool.pyright]
+typeCheckingMode = "strict"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
