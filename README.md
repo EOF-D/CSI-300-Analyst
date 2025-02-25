@@ -19,6 +19,20 @@ To run the tool use poetry:
 poetry run python -m analyst --config <config_path> --query=<QueryClass>
 ```
 
+## Config
+
+Before running the tool, make sure to setup your config file.
+Here's an example of what the config file should look like.
+You will pass the path of this file to `analyst` via `--config`
+
+```toml
+host = "localhost"
+port = 3306
+database = "DATABASE_NAME"
+username = "USERNAME"
+password = "PASSWORD"
+```
+
 ## Creating new queries
 
 ### Setup namespace.
