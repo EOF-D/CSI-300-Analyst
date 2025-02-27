@@ -170,6 +170,22 @@ docs = ["ipython", "matplotlib", "numpydoc", "sphinx"]
 tests = ["pytest", "pytest-cov", "pytest-xdist"]
 
 [[package]]
+name = "data-science-types"
+version = "0.2.23"
+description = "Type stubs for Python machine learning libraries"
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+markers = "python_version <= \"3.11\" or python_version >= \"3.12\""
+files = [
+    {file = "data-science-types-0.2.23.tar.gz", hash = "sha256:8096b9a35a8a187bf9a122b4707c97de841d810744690ee2a4ac30c6462e0d16"},
+    {file = "data_science_types-0.2.23-py3-none-any.whl", hash = "sha256:bca319abc0e53a0316f9fcb887937e942477cb9e5fc63c8581e0b0438903b977"},
+]
+
+[package.extras]
+dev = ["black", "flake8", "flake8-pyi", "matplotlib", "mypy (==0.770)", "numpy", "pandas", "pytest"]
+
+[[package]]
 name = "fonttools"
 version = "4.56.0"
 description = "Tools to manipulate font files"
@@ -409,6 +425,23 @@ python-dateutil = ">=2.7"
 
 [package.extras]
 dev = ["meson-python (>=0.13.1,<0.17.0)", "pybind11 (>=2.13.2,!=2.13.3)", "setuptools (>=64)", "setuptools_scm (>=7)"]
+
+[[package]]
+name = "microsoft-python-type-stubs"
+version = "0.0.0"
+description = ""
+optional = false
+python-versions = "*"
+groups = ["main"]
+markers = "python_version <= \"3.11\" or python_version >= \"3.12\""
+files = []
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/microsoft/python-type-stubs.git"
+reference = "HEAD"
+resolved_reference = "3d1d1d24e5d56e021a7162deba084cd8b299bf7c"
 
 [[package]]
 name = "mypy-extensions"
@@ -919,4 +952,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "fe0b9ccb192543073a0c4e6055015b77ae518cad251bbb1602995f3d32beb959"
+content-hash = "561246acd0d39b89e03cea74e431909077c5f5557f203afc9a8b80a3266396a4"

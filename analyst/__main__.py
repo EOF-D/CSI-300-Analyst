@@ -14,7 +14,9 @@ def gen_parser() -> ArgumentParser:
     """
 
     parser = ArgumentParser(prog="analyst")
-    parser.add_argument("--version", action="version", version=f"Analyst {__version__}")
+    parser.add_argument(
+        "--version", action="version", version=f"Analyst {__version__}"
+    )
 
     # Add config argument.
     parser.add_argument(
@@ -53,7 +55,7 @@ def main() -> None:
 
         query = getattr(queries, args.query)
         with query(config) as q:
-            print(q.run())
+            q.run()
 
     except ImportError:
         raise ValueError(f"Query '{args.query}' not found.")

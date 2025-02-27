@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-from typing import cast, TypedDict
-
-import tomllib
 import os
+import tomllib
+from typing import TypedDict, cast
 
 __all__ = ("Config", "load_config")
 
