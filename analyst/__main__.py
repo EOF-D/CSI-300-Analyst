@@ -14,9 +14,7 @@ def gen_parser() -> ArgumentParser:
     """
 
     parser = ArgumentParser(prog="analyst")
-    parser.add_argument(
-        "--version", action="version", version=f"Analyst {__version__}"
-    )
+    parser.add_argument("--version", action="version", version=f"Analyst {__version__}")
 
     # Add config argument.
     parser.add_argument(

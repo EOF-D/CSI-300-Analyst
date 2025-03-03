@@ -14,14 +14,15 @@ class CustomerRentalCountsQuery(BaseQuery):
 
     QUERY = """
     SELECT
-        CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
-        COUNT(r.rental_id) as rental_count
+      c.customer_id,
+      COUNT(r.rental_id) as rental_count
     FROM
-        customer c JOIN rental r ON c.customer_id = r.customer_id
+      customer c
+      JOIN rental r ON c.customer_id = r.customer_id
     GROUP BY
-        c.customer_id
+      c.customer_id
     ORDER BY
-        rental_count DESC;
+      rental_count DESC;
     """
 
     def plot(self, data: pd.DataFrame) -> None:
@@ -30,25 +31,21 @@ class CustomerRentalCountsQuery(BaseQuery):
         :param data: The data to plot.
         :type data: :class:`pd.DataFrame`
         """
-        # Take the top 10 customers by rental count.
-        customers = data.head(10)
 
-        ax = customers.plot(
+        data[""] = ""
+        ax = data.plot(
             kind="bar",
-            x="customer_name",
+            x="",
             y="rental_count",
-            width=0.8,
-            color="steelblue",
-            edgecolor="black",
             legend=False,
+            color="steelblue",
         )
 
         ax.set_title(
-            "Top 10 Customers by Rental Count",
+            "Total Rentals per Customer",
             fontsize=12,
             fontweight="bold",
         )
 
-        ax.set_xlabel("Name", fontsize=12)
-        ax.set_ylabel("Rentals", fontsize=12)
-        plt.savefig("plots/one/rentals_count.png", bbox_inches="tight")
+        ax.set_ylabel("Rental Count", fontsize=12)
+        plt.savefig("plots/one/customer_rental_count.png")

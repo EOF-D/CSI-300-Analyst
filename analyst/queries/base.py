@@ -46,7 +46,7 @@ class BaseQuery:
         data = cursor.fetchall()
         return pd.DataFrame(data)
 
-    def plot(self, data: pd.DataFrame) -> None:
+    def plot(self, _: pd.DataFrame) -> None:
         """Plots the data.
 
         :param data: The data to plot.
