@@ -1,5 +1,5 @@
 from __future__ import annotations
 
-from .base import *
 # flake8: noqa
+from .base import *
 from .one import *
