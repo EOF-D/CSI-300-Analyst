@@ -14,7 +14,7 @@ class CustomerRentalCountsQuery(BaseQuery):
 
     QUERY = """
     SELECT
-      c.customer_id,
+      c.customer_id as customer_id,
       COUNT(r.rental_id) as rental_count
     FROM
       customer c
@@ -32,11 +32,11 @@ class CustomerRentalCountsQuery(BaseQuery):
         :type data: :class:`pd.DataFrame`
         """
 
-        data[""] = ""
         ax = data.plot(
             kind="bar",
-            x="",
+            x="customer_id",
             y="rental_count",
+            width=1,
             legend=False,
             color="steelblue",
         )
@@ -48,4 +48,6 @@ class CustomerRentalCountsQuery(BaseQuery):
         )
 
         ax.set_ylabel("Rental Count", fontsize=12)
-        plt.savefig("plots/one/customer_rental_count.png")
+        ax.get_xaxis().set_visible(False)
+
+        plt.savefig("plots/one/customer_rental_count.png", dpi=200)

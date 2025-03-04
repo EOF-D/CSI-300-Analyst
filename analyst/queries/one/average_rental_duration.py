@@ -14,7 +14,6 @@ class AverageRentalDurationsQuery(BaseQuery):
 
     QUERY = """
     SELECT
-      c.customer_id,
       CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
 
       AVG(
@@ -32,7 +31,6 @@ class AverageRentalDurationsQuery(BaseQuery):
     WHERE
       r.return_date IS NOT NULL
     GROUP BY
-      c.customer_id,
       customer_name
     HAVING
       returned_rentals >= 1
@@ -69,4 +67,5 @@ class AverageRentalDurationsQuery(BaseQuery):
 
         ax.set_xlabel("Returned Rentals", fontsize=12)
         ax.set_ylabel("Average Rental Days", fontsize=12)
-        plt.savefig("plots/one/average_rental_duration.png")
+
+        plt.savefig("plots/one/average_rental_duration.png", dpi=200)

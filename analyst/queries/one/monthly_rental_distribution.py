@@ -46,7 +46,6 @@ class MonthlyRentalDistributionQuery(BaseQuery):
             kind="bar",
             x="period",
             y="rental_count",
-            width=0.8,
             legend=False,
             color="steelblue",
             edgecolor="black",
@@ -63,7 +62,9 @@ class MonthlyRentalDistributionQuery(BaseQuery):
                 fontsize=10,
             )
 
-        ax.set_title("Monthly Rental Distribution", fontsize=12, fontweight="bold")
+        ax.set_title(
+            "Monthly Rental Distribution", fontsize=12, fontweight="bold"
+        )
 
         ax.set_xlabel("Month", fontsize=12)
         ax.set_ylabel("Number of Rentals", fontsize=12)
@@ -73,4 +74,5 @@ class MonthlyRentalDistributionQuery(BaseQuery):
         plt.savefig(
             "plots/one/monthly_rental_distribution.png",
             bbox_inches="tight",
+            dpi=200,
         )
